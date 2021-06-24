@@ -7,8 +7,8 @@ from .forms import AddItemsForm, RegisterForm, LoginForm, PurchaseItemForm, Sell
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
 
-@app.route("/")
-@app.route('/home')
+
+@app.route('/')
 def home():
     return render_template('home.html')
 
