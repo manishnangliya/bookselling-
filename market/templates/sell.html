@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+Market Page
+{% endblock %}
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white" action="{{ url_for('sell_view') }}">
+            {{ sell.hidden_tag() }}<br>
+            <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX5559842.jpg" alt="" class="mb-4" height="90" width="140">
+
+            <h1 class="h3 mb-3 font-weight-normal">
+                Enter Items
+            </h1>
+            <br>
+            {{ sell.name.label() }}
+            {{ sell.name(class="form-control", placeholder="Item name") }}
+
+            {{ sell.price.label() }}
+            {{ sell.price(class="form-control", placeholder="Price") }}
+
+            {{ sell.barcode.label() }}
+            {{ sell.barcode(class="form-control", placeholder="Barcode") }}
+
+            {{ sell.description.label() }}
+            {{ sell.description(class="form-control", placeholder="Description") }}
+            <br>
+            {{ sell.submit(class="btn btn-lg btn-block btn-primary")}}
+
+        </form>
+    </div>
+</body>
+
+{% endblock%}
